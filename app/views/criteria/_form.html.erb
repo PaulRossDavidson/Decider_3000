@@ -1,0 +1,14 @@
+
+
+<%= bootstrap_form_for Criterium.new do |c| %>
+  <%= c.text_field :text, placeholder: 'Criteria' %>
+  <%= c.primary "Create" %>
+
+  <ul><% @criterium.each do |cc|%>
+    <div class="well">
+     <li><%= cc.text %></li>
+    </div>
+   <% end %>
+  </ul>
+
+<% end %>
