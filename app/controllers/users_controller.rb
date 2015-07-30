@@ -2,6 +2,11 @@ class UsersController < ApplicationController
 
   # before_action :check_no_auth
 
+  def priority
+    priority
+  end
+
+
   def new
     @user = User.new
   end
@@ -21,7 +26,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email,:name,:password)
+    params.require(:user).permit(:email,:password)
   end
 
 end
