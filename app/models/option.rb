@@ -1,7 +1,7 @@
 class Option < ActiveRecord::Base
   before_create :set_sort
-  belongs_to :user
-  has_many :criteria
+  belongs_to :decision
+
 
   private
   def set_sort

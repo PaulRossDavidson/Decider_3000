@@ -1,12 +1,9 @@
 class CriteriaController < ApplicationController
 
-  # def new
-  #   @criteria = Criteria.new
-  # end
-
   def show
     Criterium.find(params[:id])
   end
+
 
 def create
     @criterium = Criterium.new criterium_params
@@ -17,8 +14,12 @@ def create
     end
   end
 
+  def destroy
+    Criterium.destroy(:id)
+  end
+
   def index
-    @criterium = Criterium.all
+    @criteria = Criterium.all
   end
 
   def criterium_params

@@ -1,6 +1,7 @@
 class Criterium < ActiveRecord::Base
 
-  belongs_to :option
+
+  before_create :set_sort
 
   def create
     @criterium = Criterium.new
@@ -14,4 +15,11 @@ class Criterium < ActiveRecord::Base
   def criterium
     :criterium
   end
+
+  private
+    def set_sort
+      criteria = Criterium.all.order(sort: :asc)
+      new_sort = criteria.length > 0 ? criteria.last.sort + 1 : 0;
+      self.sort = new_sort
+    end
 end

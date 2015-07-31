@@ -2,11 +2,6 @@ class UsersController < ApplicationController
 
   # before_action :check_no_auth
 
-  def priority
-    priority
-  end
-
-
   def new
     @user = User.new
   end
@@ -21,7 +16,6 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
 
   private
 
