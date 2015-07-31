@@ -8,6 +8,10 @@ class DecisionsController < ApplicationController
     @decisions = Decision.all
   end
 
+  def magic
+    @decisions = Decision.all
+  end
+
    def create
       @decision = Decision.new decision_params
       if @decision.save
