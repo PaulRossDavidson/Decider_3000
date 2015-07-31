@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
 
 
+  get 'priorities/index'
+
   root 'users#index'
 
   get 'decisions' => 'decisions#index'
+  post 'decisions' => 'decisions#create', as: :decision
+  get 'decisions/:id/sort-up' => 'decisions#sort_up', as: :sort_up_decisions
+  get 'decisions/:id/sort-down' => 'decisions#sort_down', as: :sort_down_decisions
+
   get 'signup' => 'users#new', as: :new_user
   post 'signup' => 'users#create', as: :users
-  get 'priority' => 'users#priority'
+  get 'priorities' => 'priorities#index', as: :priorities
+  get 'prioritiy' => 'priorities#index', as: :priority
+  post 'priorities' => 'priorities#create'
+
 
 
   get 'login' => 'sessions#new'
@@ -14,6 +23,7 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy'
 
   get 'options' => 'options#index'
+  post 'options' => 'options#create', as: :option
   get 'criteria' => 'criteria#index'
   get 'criterium' => 'criteria#index'
   post 'criteria' => 'criteria#create', as: :user

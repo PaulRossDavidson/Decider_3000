@@ -5,7 +5,7 @@ class CriteriaController < ApplicationController
   end
 
 
-def create
+  def create
     @criterium = Criterium.new criterium_params
     if @criterium.save
     redirect_to criterium_path
@@ -15,7 +15,7 @@ def create
   end
 
   def destroy
-    Criterium.destroy(:id)
+    Criterium.delete(:id)
   end
 
   def index

@@ -1,5 +1,5 @@
 class Option < ActiveRecord::Base
-  before_create :set_sort
+  #before_create :set_sort
   belongs_to :decision
 
 

@@ -1,12 +1,22 @@
-
-
 <%= bootstrap_form_for Criterium.new do |c| %>
   <%= c.text_field :text, placeholder: 'Criteria' %>
+
   <%= c.primary "Create" %>
 
   <ul><% @criteria.each do |cc|%>
     <div class="well">
-     <li><%= cc.text %></li>
+     <div class="row">
+      <div class='col-sm-9'>
+       <li><%= cc.text %></li>
+      </div>
+      <div class="col-sm-3">
+       <div class="pull-right">
+        <td><%= link_to '', cc, method: :delete, :class=>'glyphicon glyphicon-trash' %></td>
+        <td><%= link_to '', sort_up_criteria_path(cc), :class=>'js-criterium-sort glyphicon glyphicon-arrow-up' %></td>
+        <td><%= link_to '', sort_down_criteria_path(cc), :class=>'js-criterium-sort glyphicon glyphicon-arrow-down' %></td>
+       </div>
+      </div>
+     </div>
     </div>
    <% end %>
   </ul>

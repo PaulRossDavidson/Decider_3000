@@ -9,6 +9,11 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">Decider 3000</a>
+      <a href="/decisions">Decisions</a>
+      <a href="/priorities">Priorities</a>
+      <a href="/criteria">Deciding Factors</a>
+      <a href="/options">Options</a>
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -23,9 +28,7 @@
             <ul class="dropdown-menu">
               You are logged in as
               <%= @current_user.email %> |
-              <li><a href="/priority">Priorities</a></li>
-              <li><a href="/decisions">Decisions</a></li>
-              <li role="separator" class="divider"></li>
+               <li role="separator" class="divider"></li>
               <li><%= link_to "Log out",logout_path %></a></li>
             </ul>
           </li>

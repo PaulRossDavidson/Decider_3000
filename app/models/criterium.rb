@@ -16,10 +16,14 @@ class Criterium < ActiveRecord::Base
     :criterium
   end
 
+  def destroy
+    Criterium.destroy(:id)
+  end
+
   private
     def set_sort
       criteria = Criterium.all.order(sort: :asc)
-      new_sort = criteria.length > 0 ? criteria.last.sort + 1 : 0;
-      self.sort = new_sort
+      #new_sort = criteria.length > 0 ? criteria.last.sort + 1 : 0;
+      #self.sort = new_sort
     end
 end
