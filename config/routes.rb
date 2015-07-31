@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'options_criteria/index'
+
   get 'priorities/index'
 
   root 'users#index'

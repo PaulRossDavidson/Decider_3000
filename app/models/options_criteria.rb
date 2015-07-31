@@ -1,4 +1,4 @@
-class OptionsCriteria < ActiveRecord::Base
+class OptionCriterium < ActiveRecord::Base
   belongs_to :option
-  belongs_to :criteria
+  belongs_to :criterium
 end
