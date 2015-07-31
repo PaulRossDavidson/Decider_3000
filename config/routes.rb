@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
+  get 'magic' => 'decisions#magic'
   get 'decisions' => 'decisions#index'
   post 'decisions' => 'decisions#create', as: :decision
   get 'decisions/:id/sort-up' => 'decisions#sort_up', as: :sort_up_decisions
