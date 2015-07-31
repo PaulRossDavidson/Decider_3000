@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150730223909) do
+ActiveRecord::Schema.define(version: 20150731052742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 20150730223909) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "options_criteria", force: :cascade do |t|
+    t.integer  "option_id"
+    t.integer  "criterium_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "options_criteria", ["criterium_id"], name: "index_options_criteria_on_criterium_id", using: :btree
+  add_index "options_criteria", ["option_id"], name: "index_options_criteria_on_option_id", using: :btree
+
   create_table "priorities", force: :cascade do |t|
     t.string   "name"
     t.integer  "sort_order"
@@ -59,5 +69,7 @@ ActiveRecord::Schema.define(version: 20150730223909) do
   end
 
   add_foreign_key "decisions", "users"
+  add_foreign_key "options_criteria", "criteria"
+  add_foreign_key "options_criteria", "options"
   add_foreign_key "priorities", "users"
 end
