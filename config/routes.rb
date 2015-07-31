@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'criteria' => 'criteria#index'
   get 'criterium' => 'criteria#index'
   post 'criteria' => 'criteria#create', as: :user
-  delete 'criteria/:id' => 'criteria#destroy', as: :
+  delete 'criteria/:id' => 'criteria#destroy'
    # post 'criteria' => 'criteria#create'
   get 'criteria/:id/sort-up' => 'criteria#sort_up', as: :sort_up_criteria
   get 'criteria/:id/sort-down' => 'criteria#sort_down', as: :sort_down_criteria
