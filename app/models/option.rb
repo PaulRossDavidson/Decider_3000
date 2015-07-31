@@ -6,7 +6,7 @@ class Option < ActiveRecord::Base
   private
   def set_sort
     criteria = Criterium.all.order(sort: :asc)
-    new_sort = criteria.length >0 ? criteria.last.sort
+    new_sort = criteria.length >0 ? criteria.last.sort : 0
     self.sort = new_sort
   end
 end
