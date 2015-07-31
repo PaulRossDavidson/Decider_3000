@@ -1,6 +1,6 @@
 class OptionsCriteriaController < ApplicationController
   def index
-    @options = Optoins.all
+    @options = Option.all
     @criteria = Criterium.all
   end
 end

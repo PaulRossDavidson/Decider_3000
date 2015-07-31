@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
+  get 'options_criteria' => 'options_criteria#index'
   get 'magic' => 'decisions#magic'
   get 'decisions' => 'decisions#index'
   post 'decisions' => 'decisions#create', as: :decision
